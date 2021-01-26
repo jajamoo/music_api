@@ -17,3 +17,10 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::apiResource('music', 'App\Http\Controllers\MusicController');
+Route::get('music/top_ten', 'App\Http\Controllers\MusicController\MusicController@index');
+//Route::post('music/top_ten_store', 'MusicController@store');
+
+
+
